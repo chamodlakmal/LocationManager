@@ -50,6 +50,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
@@ -81,9 +82,7 @@ enum class DemoScreen(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainDemoScreen(
-    modifier: Modifier = Modifier
-) {
+fun MainDemoScreen() {
     val context = LocalContext.current
     var currentScreen by remember { mutableStateOf<DemoScreen?>(null) }
 
@@ -189,7 +188,8 @@ fun MainDemoScreen(
                         Text(
                             "Comprehensive location services demonstration with MVVM architecture and Hilt DI",
                             style = MaterialTheme.typography.bodyLarge,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            textAlign = TextAlign.Center
                         )
                     }
                 }

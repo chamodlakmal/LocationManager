@@ -39,6 +39,24 @@ android {
     buildFeatures {
         compose = true
     }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = false
+            isReturnDefaultValues = true
+
+            all {
+                it.jvmArgs("-XX:+EnableDynamicAgentLoading")
+                // Keep parallel execution disabled for static mocks
+                it.maxParallelForks = 1
+                // Increase memory for tests
+                it.maxHeapSize = "2g"
+                // Set system properties for MockK
+                it.systemProperty("mockk.relaxed", "false")
+                it.systemProperty("mockk.clear.all.on.teardown", "true")
+            }
+        }
+    }
 }
 
 dependencies {
@@ -66,8 +84,6 @@ dependencies {
     testImplementation("io.mockk:mockk:1.14.5")
     testImplementation("io.mockk:mockk-android:1.13.8")
 
-    // Robolectric for Android unit testing
-    testImplementation("org.robolectric:robolectric:4.11.1")
 
     // Coroutines testing
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
