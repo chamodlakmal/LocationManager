@@ -19,15 +19,15 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.automirrored.filled.NavigateNext
 import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.ErrorOutline
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Lock
-import androidx.compose.material.icons.filled.Place
-import androidx.compose.material.icons.filled.Refresh
-import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material.icons.outlined.Explore
+import androidx.compose.material.icons.outlined.GpsFixed
+import androidx.compose.material.icons.outlined.History
+import androidx.compose.material.icons.outlined.TrackChanges
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -65,16 +65,16 @@ enum class DemoScreen(
     val icon: androidx.compose.ui.graphics.vector.ImageVector,
     val description: String
 ) {
-    LAST_LOCATION("Last Location", Icons.Default.LocationOn, "Get cached location quickly"),
+    LAST_LOCATION("Last Location", Icons.Outlined.History, "Get cached location quickly"),
     CURRENT_LOCATION(
         "Current Location",
-        Icons.Default.Search,
+        Icons.Outlined.GpsFixed,
         "Get fresh location with priority settings"
     ),
-    LOCATION_UPDATES("Location Updates", Icons.Default.Refresh, "Continuous location tracking"),
+    LOCATION_UPDATES("Location Updates", Icons.Outlined.TrackChanges, "Continuous location tracking"),
     PROXIMATE_LOCATION(
         "Smart Location",
-        Icons.Default.Place,
+        Icons.Outlined.Explore,
         "Best available location intelligently"
     )
 }
@@ -210,7 +210,7 @@ fun MainDemoScreen(
                         horizontalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
                         Icon(
-                            imageVector = if (isLocationPermissionGranted) Icons.Default.Check else Icons.Default.Warning,
+                            imageVector = if (isLocationPermissionGranted) Icons.Default.CheckCircle else Icons.Default.ErrorOutline,
                             contentDescription = null,
                             tint = if (isLocationPermissionGranted)
                                 MaterialTheme.colorScheme.onPrimaryContainer
@@ -388,7 +388,7 @@ private fun DemoScreenCard(
             }
             if (isEnabled) {
                 Icon(
-                    imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                    imageVector = Icons.AutoMirrored.Filled.NavigateNext,
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.onSurfaceVariant
                 )
@@ -490,7 +490,7 @@ fun MainDemoScreenContent(
                 horizontalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 Icon(
-                    imageVector = if (hasLocationPermission) Icons.Default.CheckCircle else Icons.Default.Warning,
+                    imageVector = if (hasLocationPermission) Icons.Default.CheckCircle else Icons.Default.ErrorOutline,
                     contentDescription = null,
                     tint = if (hasLocationPermission) {
                         MaterialTheme.colorScheme.onPrimaryContainer
@@ -635,7 +635,7 @@ private fun DemoOptionCard(
             }
 
             Icon(
-                imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                imageVector = Icons.AutoMirrored.Filled.NavigateNext,
                 contentDescription = "Navigate",
                 tint = if (enabled) {
                     MaterialTheme.colorScheme.onSurfaceVariant

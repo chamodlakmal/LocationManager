@@ -51,6 +51,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.material.icons.extended)
     implementation(libs.play.services.location)
 
     // Hilt dependencies
@@ -58,7 +59,28 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
+    // Testing dependencies
     testImplementation(libs.junit)
+
+    // MockK for comprehensive mocking
+    testImplementation("io.mockk:mockk:1.14.5")
+    testImplementation("io.mockk:mockk-android:1.13.8")
+
+    // Robolectric for Android unit testing
+    testImplementation("org.robolectric:robolectric:4.11.1")
+
+    // Coroutines testing
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+
+    // Lifecycle testing
+    testImplementation("androidx.lifecycle:lifecycle-runtime-testing:2.7.0")
+
+    // Architecture Components testing
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+
+    // Additional testing utilities
+    testImplementation("app.cash.turbine:turbine:1.0.0") // For Flow testing
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))

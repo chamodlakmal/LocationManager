@@ -3,8 +3,8 @@ package lk.chamiviews.locationmanager.presentation.components
 import android.location.Location
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.LocationOn
+import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.MyLocation
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -38,7 +38,7 @@ fun LocationInfoCard(
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 Icon(
-                    imageVector = Icons.Default.LocationOn,
+                    imageVector = Icons.Default.MyLocation,
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.primary
                 )
@@ -142,7 +142,7 @@ fun ErrorCard(
                 modifier = Modifier.size(24.dp)
             ) {
                 Icon(
-                    imageVector = Icons.Default.Close,
+                    imageVector = Icons.Default.Clear,
                     contentDescription = "Dismiss error",
                     tint = MaterialTheme.colorScheme.onErrorContainer
                 )

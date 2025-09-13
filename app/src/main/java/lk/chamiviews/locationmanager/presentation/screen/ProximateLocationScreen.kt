@@ -1,24 +1,24 @@
 package lk.chamiviews.locationmanager.presentation.screen
 
+import android.location.Location
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Place
-import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.outlined.Explore
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import lk.chamiviews.locationmanager.presentation.components.LocationInfoCard
 import lk.chamiviews.locationmanager.presentation.components.ErrorCard
+import lk.chamiviews.locationmanager.presentation.components.LocationInfoCard
+import lk.chamiviews.locationmanager.presentation.model.LocationUiState
 import java.text.SimpleDateFormat
 import java.util.*
-import androidx.compose.ui.tooling.preview.Preview
-import android.location.Location
-import lk.chamiviews.locationmanager.presentation.model.LocationUiState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -67,7 +67,7 @@ fun ProximateLocationScreenContent(
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     Icon(
-                        imageVector = Icons.Default.Place,
+                        imageVector = Icons.Outlined.Explore,
                         contentDescription = "Proximate Location",
                         tint = MaterialTheme.colorScheme.primary
                     )
@@ -101,7 +101,7 @@ fun ProximateLocationScreenContent(
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     Icon(
-                        imageVector = Icons.Default.Info,
+                        imageVector = Icons.Outlined.Info,
                         contentDescription = null,
                         tint = MaterialTheme.colorScheme.secondary
                     )
@@ -179,7 +179,7 @@ fun ProximateLocationScreenContent(
                 Spacer(modifier = Modifier.width(8.dp))
             } else {
                 Icon(
-                    imageVector = Icons.Default.Place,
+                    imageVector = Icons.Outlined.Explore,
                     contentDescription = null,
                     modifier = Modifier.size(18.dp)
                 )

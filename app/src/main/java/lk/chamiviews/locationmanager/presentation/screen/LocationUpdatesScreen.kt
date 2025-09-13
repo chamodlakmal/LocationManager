@@ -15,8 +15,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
-import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Stop
+import androidx.compose.material.icons.outlined.TrackChanges
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -80,7 +81,7 @@ fun LocationUpdatesScreen(
                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         Icon(
-                            imageVector = Icons.Default.PlayArrow,
+                            imageVector = Icons.Outlined.TrackChanges,
                             contentDescription = "Location Updates",
                             tint = MaterialTheme.colorScheme.primary
                         )
@@ -189,7 +190,7 @@ fun LocationUpdatesScreen(
                     enabled = uiState.isPermissionGranted
                 ) {
                     Icon(
-                        imageVector = if (uiState.isTracking) Icons.Default.KeyboardArrowDown else Icons.Default.PlayArrow,
+                        imageVector = if (uiState.isTracking) Icons.Default.Stop else Icons.Default.PlayArrow,
                         contentDescription = null,
                         modifier = Modifier.size(18.dp)
                     )

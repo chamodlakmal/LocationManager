@@ -1,28 +1,46 @@
 package lk.chamiviews.locationmanager.presentation.screen
 
-import androidx.compose.foundation.layout.*
+import android.location.Location
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.LocationOn
-import androidx.compose.material.icons.filled.Place
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material.icons.filled.GpsFixed
+import androidx.compose.material.icons.filled.MyLocation
+import androidx.compose.material.icons.filled.Tune
+import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import lk.chamiviews.locationmanager.domain.model.LocationPriority
-import lk.chamiviews.locationmanager.presentation.components.LocationInfoCard
 import lk.chamiviews.locationmanager.presentation.components.ErrorCard
-import lk.chamiviews.locationmanager.presentation.viewmodel.CurrentLocationViewModel
-import java.text.SimpleDateFormat
-import java.util.*
-import androidx.compose.ui.tooling.preview.Preview
-import android.location.Location
+import lk.chamiviews.locationmanager.presentation.components.LocationInfoCard
 import lk.chamiviews.locationmanager.presentation.model.LocationUiState
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -57,7 +75,7 @@ fun CurrentLocationScreen(
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     Icon(
-                        imageVector = Icons.Default.LocationOn,
+                        imageVector = Icons.Default.GpsFixed,
                         contentDescription = "Current Location",
                         tint = MaterialTheme.colorScheme.primary
                     )
@@ -90,7 +108,7 @@ fun CurrentLocationScreen(
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     Icon(
-                        imageVector = Icons.Default.Settings,
+                        imageVector = Icons.Default.Tune,
                         contentDescription = null,
                         tint = MaterialTheme.colorScheme.primary
                     )
@@ -149,7 +167,7 @@ fun CurrentLocationScreen(
                 Spacer(modifier = Modifier.width(8.dp))
             } else {
                 Icon(
-                    imageVector = Icons.Default.Place,
+                    imageVector = Icons.Default.MyLocation,
                     contentDescription = null,
                     modifier = Modifier.size(18.dp)
                 )

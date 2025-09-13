@@ -15,9 +15,9 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.LocationOn
-import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.LocationOn
+import androidx.compose.material.icons.outlined.Refresh
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -87,7 +87,7 @@ fun LastLocationScreenContent(
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     Icon(
-                        imageVector = Icons.Default.LocationOn,
+                        imageVector = Icons.Outlined.LocationOn,
                         contentDescription = "Last Location",
                         tint = MaterialTheme.colorScheme.primary
                     )
@@ -154,7 +154,7 @@ fun LastLocationScreenContent(
                 Spacer(modifier = Modifier.width(8.dp))
             } else {
                 Icon(
-                    imageVector = Icons.Default.Refresh,
+                    imageVector = Icons.Outlined.Refresh,
                     contentDescription = null,
                     modifier = Modifier.size(18.dp)
                 )
@@ -211,7 +211,7 @@ fun LastLocationScreenContent(
                 verticalAlignment = Alignment.Top
             ) {
                 Icon(
-                    imageVector = Icons.Default.Info,
+                    imageVector = Icons.Outlined.Info,
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.onTertiaryContainer
                 )
