@@ -11,12 +11,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import lk.chamiviews.locationmanager.PageSizeCompatibility.Companion.getSystemPageSize
+import lk.chamiviews.locationmanager.PageSizeCompatibility.Companion.isUsing16KBPages
 import lk.chamiviews.locationmanager.ui.theme.LocationManagerTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        println(getSystemPageSize())
+        println(isUsing16KBPages())
         setContent {
             LocationManagerTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
