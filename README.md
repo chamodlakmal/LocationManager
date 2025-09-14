@@ -217,7 +217,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙋‍♂️ Author
 
-**Chamodi Lakmal**
+**Chamod Lakmal**
 - GitHub: [@chamodlakmal](https://github.com/chamodlakmal)
 - Medium: [Building Modern Android Location Manager](https://medium.com/@chamodlakmal97/building-a-modern-android-location-manager-from-legacy-approaches-to-clean-architecture-excellence-3e3e4590533e)
 
