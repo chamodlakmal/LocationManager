@@ -195,7 +195,7 @@ Run the test suite:
 
 ## 📖 Documentation
 
-For detailed implementation insights, check out the accompanying [Medium article](medium_article.md) that explains:
+For detailed implementation insights, check out the accompanying [Medium article]([medium_article.md](https://medium.com/@chamodlakmal97/building-a-modern-android-location-manager-from-legacy-approaches-to-clean-architecture-excellence-3e3e4590533e)) that explains:
 
 - Evolution from legacy LocationManager to modern approaches
 - Clean Architecture implementation details
